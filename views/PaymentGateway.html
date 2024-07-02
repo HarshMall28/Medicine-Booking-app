@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PaymentGateway || Cinemax</title>
+    <link rel="stylesheet" href="./PaymentGateway.css" />
+    <link rel="stylesheet" href="fonts/css/all.css" />
+    <link rel="stylesheet" href="fonts/css/all.min.css" />
+    <link rel="stylesheet" href="fonts/css/brands.css" />
+    <link rel="stylesheet" href="fonts/css/fontawesome.css" />
+    <link rel="stylesheet" href="fonts/css/solid.css" />
+    <link rel="stylesheet" href="fonts/css/regular.css" />
+  </head>
+  <body>
+    <section class="mainSection">
+      <nav class="navbar">
+        <figure><img src="images/logo.png" alt="" /></figure>
+        <button type="button" onclick="confirm('Hello world')">Cancel</button>
+      </nav>
+      <main class="mainContainer">
+        <div class="mainContainer_left">
+          <h1 class="heading">CheckOut</h1>
+          <div class="billingAddress">
+            <h1>Billing Address</h1>
+            <div class="billingAddress_container">
+              <div class="billingAddress_container_box">
+                <div class="countryName">
+                  <label for="country">Country</label>
+                  <select name="" id="country">
+                    <option value="Ireland">Ireland</option>
+                    <option value="Ireland">India</option>
+                    <option value="Ireland">Australia</option>
+                    <option value="Ireland">USA</option>
+                    <option value="Ireland">Spain</option>
+                    <option value="Ireland">Germany</option>
+                  </select>
+                </div>
+                <div class="stateUt" style="display:none;">
+                  <label for="stateUt"> State/Union Territory </label>
+                  <select name="" id="stateUt">
+                    <option disabled selected>Please Select...</option>
+                    <option value="">Maharashtra</option>
+                    <option value="">Delhi</option>
+                    <option value="">Bihar</option>
+                    <option value="">Uttar Pradesh</option>
+                  </select>
+                </div>
+              </div>
+              <!-- <p>
+                Udamy is required by law to collect applicable transaction taxes
+                for purchase made in certain tax jurisdictions.
+              </p> -->
+            </div>
+            <div class="payment_container">
+              <div class="payment_heading">
+                <h1>Payment Method</h1>
+                <div class="secured">
+                  <p>Secured Connection</p>
+                  <i class="fa-solid fa-lock"></i>
+                </div>
+              </div>
+              <div class="paymentMethodsContainer">
+                <div class="creditDebitCard">
+                  <div class="creditBody">
+                    <input
+                      type="radio"
+                      name="paymentMethod"
+                      id="creditBody"
+                      class="radio"
+                    />
+                    <div class="creditDebitCard_heading">
+                      <div class="headerOne">
+                        <i class="fa-regular fa-credit-card"></i>
+                        <p>Credit/Debit Card</p>
+                      </div>
+                      <div class="iconContainer">
+                        <figure>
+                          <img src="images/visa.png" alt="" />
+                        </figure>
+                        <figure>
+                          <img src="images/rupay.png" alt="" />
+                        </figure>
+                        <figure>
+                          <img src="images/masterCard.jpg" alt="" />
+                        </figure>
+                        <figure>
+                          <img src="images/americanExpress.png" alt="" />
+                        </figure>
+                        <figure>
+                          <img src="images/discover.png" alt="" />
+                        </figure>
+                      </div>
+                    </div>
+                  </div>
+                  <div id="creditBody" class="container" style="display: none">
+                    <div class="bodyOne">
+                      <label for="card"> Name on the card </label>
+                      <input type="text" placeholder="Name on the card" />
+                    </div>
+                    <div class="bodyTwo">
+                      <label for="card">Card Number</label>
+                      <input type="text" placeholder="0000 0000 0000 0000" />
+                    </div>
+                    <div class="bodyThree">
+                      <div class="one">
+                        <label for="card">CVV/CVC</label>
+                        <input type="text" placeholder="CVC" />
+                      </div>
+                      <div class="two">
+                        <label for="card">Expiry date</label>
+                        <input type="text" placeholder="MM/YY" />
+                      </div>
+                    </div>
+                    <div class="bodyFour">
+                      <input type="checkbox" id="checkItem" />
+                      <label for="checkItem"
+                        >Securely save this card for later purchases</label
+                      >
+                    </div>
+                  </div>
+                </div>
+                <div class="upi" style="display: none">
+                  <div class="upiBody">
+                    <input
+                      type="radio"
+                      id="upiBody"
+                      name="paymentMethod"
+                      class="radio"
+                    />
+                    <div class="upi_heading">
+                      <div class="headerOne">
+                        <figure>
+                          <img src="images/upi.png" alt="" />
+                        </figure>
+                        <p>UPI</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div id="upiBody" class="container" style="display: none">
+                    <div class="upiBodyLeft">
+                      <p>
+                        Enter your UPI ID/ VPA and make payment on your UPI app.
+                      </p>
+                      <div class="upiBodyLeftInput">
+                        <label for="upiId">UPI ID/ VPA</label>
+                        <input type="text" placeholder="UPI ID / VPA" />
+                      </div>
+                      <button class="button" id="upiMakePayment">
+                        Make Payment
+                      </button>
+                    </div>
+                    <div class="upiBodyCenter"></div>
+                    <div class="upiBodyRight">
+                      <p>
+                        Scan QR code to complete your UPI payment on your mobile
+                        device.
+                      </p>
+                      <div class="barcode">
+                        <figure class="barcodeImage">
+                          <img src="images/qrcode.png" alt="" />
+                        </figure>
+                        <button type="button" id="barcodeButton">
+                          Click here to scan
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="paytm" style="display: none">
+                  <div class="paytmBody">
+                    <input
+                      type="radio"
+                      id="paytmBody"
+                      name="paymentMethod"
+                      class="radio"
+                    />
+                    <div class="paytm_heading">
+                      <div class="headerOne">
+                        <figure>
+                          <img src="images/paytm.png" alt="" />
+                        </figure>
+                        <p>PayTM</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div id="paytmBody" class="container" style="display: none">
+                    <p>
+                      In order to complete your transaction, we will transfer
+                      you over to Adyen's secure servers.
+                    </p>
+                  </div>
+                </div>
+                <div class="netBanking">
+                  <div class="netBankingBody">
+                    <input
+                      type="radio"
+                      id="netBankingBody"
+                      name="paymentMethod"
+                      class="radio"
+                    />
+                    <div class="netBanking_heading">
+                      <div class="headerOne">
+                        <figure>
+                          <img src="images/bank2.png" alt="" />
+                        </figure>
+                        <p>Net Banking</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    id="netBankingBody"
+                    class="container"
+                    style="display: none"
+                  >
+                    <p>
+                      In order to complete your transaction, we will transfer
+                      you over to Adyean's secure server
+                    </p>
+                    <select name="" id="selectNet">
+                      <option selected disabled>Select your bank..</option>
+                      <option value="">IDBI Bank</option>
+                      <option value="">Axis Bank</option>
+                      <option value="">Kotak Bank</option>
+                      <option value="">Central Bank of India</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="wallet">
+                  <div class="walletBody">
+                    <input
+                      type="radio"
+                      id="walletBody"
+                      name="paymentMethod"
+                      class="radio"
+                    />
+                    <div class="wallet_heading">
+                      <div class="headerOne">
+                        <figure>
+                          <img src="images/wallet.png" alt="" />
+                        </figure>
+                        <p>Mobile Wallet</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div id="walletBody" class="container" style="display: none">
+                    <p>
+                      In order to complete your transaction, we will transfer
+                      you over to Adyean's secure server
+                    </p>
+                    <select name="" id="selectNet">
+                      <option selected disabled>Select your bank..</option>
+                      <option value="">Airtel Wallet</option>
+                      <option value="">Apple Wallet</option>
+                      <option value="">Samsung Wallet</option>
+                      <option value="">Jio Wallet</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="mainContainer_right">
+          <div class="orderSummary">
+            <div class="order">
+              <h1>Order</h1>
+              <div
+                class="cartItems"
+                style="display: grid; row-gap: 0.25rem"
+              ></div>
+            </div>
+            <div class="summary">
+              <h1>Summary</h1>
+              <div class="summaryInfo">
+                <p>Order price:</p>
+                <p id="orderTotal">&#8377;50</p>
+              </div>
+              <div class="underline"></div>
+              <div class="summaryTotal">
+                <p>Total:</p>
+                <p id="summaryTotal"></p>
+              </div>
+            </div>
+          </div>
+          <p class="paraOne">
+            By completing your purchase you agree to these
+            <a href="#">Terms of service.</a>
+          </p>
+          <button type="button" id="checkOutButton">Complete Checkout</button>
+          <p class="paraTwo">Channel is secured by norton antivirus</p>
+        </div>
+      </main>
+    </section>
+    <script src="./PaymentGateway.js"></script>
+  </body>
+</html>
